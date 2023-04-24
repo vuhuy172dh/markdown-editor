@@ -6,10 +6,10 @@ jobs:
     container:
       image: ghcr.io/jenkinsci/jenkinsfile-runner:master
     steps:
-      - uses: actions/checkout@v2
-        with:
-          node-version: '16'
-      - uses: jenkinsci/jfr-container-action@master
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Run jenkins
+        uses: jenkinsci/jfr-container-action@master
         with:
           command: run
           jenkinsfile: Jenkinsfile
