@@ -1,7 +1,7 @@
 name: Linter CI
 on: [pull_request]
 jobs:
-  job-name:
+  jenkins-container-pipeline:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/jenkinsci/jenkinsfile-runner:master
@@ -11,4 +11,5 @@ jobs:
         with:
           command: run
           jenkinsfile: Jenkinsfile
+          pluginstxt: plugins.txt
           jcasc: jcasc.yml
