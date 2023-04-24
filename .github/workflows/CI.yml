@@ -9,6 +9,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: jenkinsci/jfr-container-action@master
         with:
+          node-version: '16'
           command: run
           jenkinsfile: Jenkinsfile
           pluginstxt: plugins.txt
