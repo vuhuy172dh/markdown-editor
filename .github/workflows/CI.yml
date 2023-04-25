@@ -1,0 +1,16 @@
+name: Linter CI
+on: [pull_request]
+jobs:
+  jenkins-container-pipeline:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/jenkinsci/jenkinsfile-runner:master
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Run jenkins
+        uses: jenkinsci/jfr-container-action@master
+        with:
+          command: run
+          jenkinsfile: Jenkinsfile
+          pluginstxt: plugins.txt
