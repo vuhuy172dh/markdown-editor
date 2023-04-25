@@ -1,9 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage('hello') {
+        stage('check linter') {
             steps {
-                sh 'echo Hello Jenkins'
+                sh 'npm run lint'
             }
         }
    }
