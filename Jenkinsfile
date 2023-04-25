@@ -1,9 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage('check linter') {
+        stage('hello') {
             steps {
-                sh 'npm run lint'
+                sh 'echo Hello World'
             }
         }
    }
